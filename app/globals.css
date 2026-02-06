@@ -7,9 +7,6 @@
   --white: #ffffff;
 }
 
-@theme inline {
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
