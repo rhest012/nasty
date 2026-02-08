@@ -202,7 +202,7 @@ function RsvpForm() {
                 placeholder="Contact Number"
                 handleInputChange={handleInputChange}
                 value={inputData.contactNumber}
-                prop="email"
+                prop="contactNumber"
                 type="input"
                 formProps={defaultInputData}
               />
