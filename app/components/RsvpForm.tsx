@@ -83,6 +83,8 @@ function RsvpForm() {
 
       const collectionName = inputData.rsvp === "Yes" ? "yes" : "no";
 
+      console.log("Formatted Input data", formattedInputData);
+
       // Check Duplicates
       const userDocRef: any = await getUserDocRef(
         formattedInputData.email,
@@ -97,7 +99,7 @@ function RsvpForm() {
         );
       } else {
         const submissionRef = doc(
-          collection(db, "legacyAwards", "rsvp", collectionName),
+          collection(db, "energLaunch", "rsvp", collectionName),
           formattedInputData.id,
         );
 
@@ -269,7 +271,7 @@ function RsvpForm() {
       ) : null}
       <div>
         <div className="h-[30px]">
-          <p className="error-text text-center text-white">
+          <p className="error-text text-center !text-white">
             {errorMessage ? errorMessage : ""}
           </p>
         </div>

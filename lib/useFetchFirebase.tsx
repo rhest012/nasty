@@ -15,7 +15,6 @@ import {
   DocumentSnapshot,
   orderBy,
 } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -31,7 +30,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-export const auth = getAuth();
 
 // Define the type for fetched data
 // Custom hook to fetch data from a nested Firestore subcollection
@@ -212,7 +210,7 @@ export const getUserDocRef = async (
   searchAll: boolean,
 ): Promise<DocumentReference | DocumentReference[] | null> => {
   try {
-    const usersRef = collection(db, "legacyAwards", "rsvp", collectionName);
+    const usersRef = collection(db, "energLaunch", "rsvp", collectionName);
     const q = query(usersRef, where("email", "==", searchTerm));
     const querySnapshot = await getDocs(q);
 
