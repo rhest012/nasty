@@ -150,7 +150,7 @@ function RsvpForm() {
   }, [isSubmissionSuccessful]);
 
   return (
-    <div className="flex flex-col w-full content-center gap-4 justify-center flex-wrap w-full pb-8">
+    <div className="flex flex-col w-full content-center gap-4 justify-center flex-wrap w-full sm:pb-8 md:pb-0">
       <div className="form-inputfield-container">
         <div className="single-input-container">
           <FormInput
