@@ -37,10 +37,10 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
       onClick={handleClick}
     >
       {isSubmissionPending ? (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center !text-black">
           {buttonLoadingText}
           <svg
-            className="animate-spin h-5 w-5 text-white ml-4 mt-0.5"
+            className="animate-spin h-5 w-5 text-black ml-4 mt-0.5"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

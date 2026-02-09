@@ -25,6 +25,7 @@ type RsvpFormProps = {
   vape: string;
   fasting: string;
   iftaar: string;
+  deliveryAddress: string;
 };
 
 type FetchedDataProps = {

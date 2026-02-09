@@ -108,7 +108,7 @@ select {
 
 .primary-button {
   border-radius: 1.25rem;
-  color: var(--black);
+  color: var(--black) !important;
   border: 1px solid var(--green);
   background-color: var(--green);
   transition: 0.5s;

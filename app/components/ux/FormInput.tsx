@@ -13,7 +13,7 @@ const FormInput = <T,>({
 
   return (
     <input
-      className="form-inputfield focus:outline-none focus:ring-0"
+      className="form-inputfield focus:outline-none focus:ring-0 "
       type={type}
       placeholder={placeholder}
       onChange={onChange}

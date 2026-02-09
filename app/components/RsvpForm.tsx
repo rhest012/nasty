@@ -24,6 +24,7 @@ const defaultInputData: RsvpFormProps = {
   vape: "",
   fasting: "",
   iftaar: "",
+  deliveryAddress: "",
 };
 
 function RsvpForm() {
@@ -131,6 +132,8 @@ function RsvpForm() {
         error instanceof Error ? error.message : "An unexpected error occurred",
       );
       throw error;
+    } finally {
+      setIsSubmissionPending(false);
     }
   };
 
@@ -227,6 +230,20 @@ function RsvpForm() {
                 options={["Yes", "No"]}
               />
             </div>
+
+            <div className="single-input-container">
+              <FormInput
+                placeholder="Delivery Address"
+                handleInputChange={handleInputChange}
+                value={inputData.deliveryAddress}
+                prop="deliveryAddress"
+                type="input"
+                formProps={defaultInputData}
+              />
+            </div>
+          </div>
+
+          <div className="form-inputfield-container">
             <div className="single-input-container">
               <FormSelect
                 selectedOption="Are you fasting for Ramadan?"
@@ -236,9 +253,7 @@ function RsvpForm() {
                 options={["Yes", "No"]}
               />
             </div>
-          </div>
-          {inputData.fasting == "Yes" ? (
-            <div className="form-inputfield-container">
+            {inputData.fasting == "Yes" ? (
               <div className="single-input-container">
                 <FormSelect
                   selectedOption="Do you require an iftaar pack to break your fast?"
@@ -248,8 +263,8 @@ function RsvpForm() {
                   options={["Yes", "No"]}
                 />
               </div>
-            </div>
-          ) : null}
+            ) : null}
+          </div>
         </>
       ) : null}
       <div>
