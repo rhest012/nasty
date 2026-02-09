@@ -83,8 +83,6 @@ function RsvpForm() {
 
       const collectionName = inputData.rsvp === "Yes" ? "yes" : "no";
 
-      console.log("Formatted Input data", formattedInputData);
-
       // Check Duplicates
       const userDocRef: any = await getUserDocRef(
         formattedInputData.email,
