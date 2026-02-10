@@ -123,6 +123,25 @@ function RsvpForm() {
 
           transaction.set(submissionRef, formattedInputData);
         });
+
+        // Handle Email
+        if (inputData.rsvp === "Yes") {
+          // Send Success Email email
+          const emailResponse = await fetch("/api/sendEmail", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              to: inputData.email,
+              userName: inputData.firstName,
+              emailName: "RSVP Successful",
+            }),
+          });
+
+          const emailResult = await emailResponse.json();
+          console.log(emailResult);
+        }
       }
 
       setIsSubmissionSuccessful(true);
